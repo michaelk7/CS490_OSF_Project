@@ -1,0 +1,21 @@
+.banner 
+{
+    margin: auto;
+    width: fit-content;
+}
+
+.title 
+{
+    font-size: 80px;
+}
+
+.login 
+{
+    margin: auto;
+    width: fit-content;
+}
+
+.input 
+{
+    color: gray;
+}
