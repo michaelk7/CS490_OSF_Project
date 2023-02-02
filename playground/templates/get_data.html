@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OSF Ketoacidosis</title>
+        <style>
+            .banner 
+            {
+                margin: auto;
+                width: fit-content;
+            }
+
+            .title 
+            {
+                font-size: 80px;
+            }
+
+            .login 
+            {
+                margin: auto;
+                width: fit-content;
+            }
+
+            .input 
+            {
+                color: gray;
+            }
+			table, th, td {
+			border: 1px solid black;
+			}
+        </style>
+        </head>
+    <body>
+        <div class="banner">
+            <p class="title">OSF Machine Learning Project</p>
+        </div>
+        
+        <div class="data_display">
+<table>
+    <thead>
+    {% for head in field_names %}
+       <th>{{ head }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in data %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+        </div>
+    </body>
+</html>
