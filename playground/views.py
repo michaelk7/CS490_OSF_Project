@@ -13,7 +13,5 @@ def say_hello(request):
     
 def get_data(request):
     field_names = [f.name for f in DkaData._meta.get_fields()]
-    data = [[getattr(ins, name) for name in field_names]
-            for ins in DkaData.objects.prefetch_related().all()]
 
-    return render(request, 'get_data.html', {'field_names': field_names, 'data': data})
+    return render(request, 'get_data.html', {'field_names': field_names})
