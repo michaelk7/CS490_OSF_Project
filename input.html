@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="input.css">
+
+    
+    
+</head>
+<body>
+
+    <div class="page">
+        <div class="landing">
+            <h1>DKA Input</h1>
+
+            <form action="/action_page.php"  method="post">
+                <fieldset>
+                    <legend style="color:white; margin: 25px;">Please enter your details:</legend>
+
+                    <div class="form-group">
+                        <label for="age" class="form-label mt-4">Age</label>
+                        <input type="number" class="form-control" id="age" placeholder="">  
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weight" class="form-label mt-4">Weight</label>
+                        <input type="number" class="form-control" id="weight" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bmi" class="form-label mt-4">BMI (kg)</label>
+                        <input type="number" class="form-control" id="bmi" placeholder="">
+                    </div>
+
+            
+                    <div class="form-group">
+                        <label for="diabetes" class="form-label mt-4">Diabetes Type (type 1 = 0 and type 2 = 1)</label>
+                        <select id="diabetes" name="diabetes">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="gender" class="form-label mt-4">Gender (0 = male, 1 = female)</label>
+                        <select id="gender" name="gender">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="unit" class="form-label mt-4">Unit (0 = Medical ICU, 1 = Intermediate Care)</label>
+                        <select id="unit" name="unit">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="APACHE II Score" class="form-label mt-4">APACHE II Score</label>
+                        <input type="number" class="form-control" id="APACHE II Score" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Admission Chloride (mEq/L)" class="form-label mt-4">Admission Chloride (mEq/L)</label>
+                        <input type="number" class="form-control" id="Admission Chloride (mEq/L)" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Peak Chloride (mEq/L)" class="form-label mt-4">Peak Chloride (mEq/L)</label>
+                        <input type="number" class="form-control" id="Peak Chloride (mEq/L)" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="peak" class="form-label mt-4">Peak Chloride Category (0 = normochloremia, 1 = hyperchloremia)</label>
+                        <select id="peak" name="peak">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+
+                </fieldset>
+
+                <button type="submit" class="btn btn-primary" data-nlok-ref-guid="c2ea3092-d258-49eb-8831-8d24884cd8b7">Submit</button>
+                
+            </form>
+        </div>
+    </div>
+  
+
+    
+  
+      
+</body>
+</html>
