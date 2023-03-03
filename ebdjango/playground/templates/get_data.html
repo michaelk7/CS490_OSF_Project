@@ -1,71 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>OSF Ketoacidosis</title>
-        <style>
-            .banner 
-            {
-                margin: auto;
-                width: fit-content;
-				text-align: center;
-            }
-
-            .title 
-            {
-                font-size: 80px;
-            }
-			input
-			{
-				width:72px;
-				padding: 5px 10px;
-				margin-top: 30px;
-				box-sizing: border-box;
-			}
-			b
-			{
-				margin-right: 6px;
-				margin-left: 20px;
-			}
-			.submitButton{ 
-				text-align: center; 
-			}
-			.data_display
-			{
-				text-align: center;
-			}
-			select {
-			padding: 5px;
-			margin-top: 30px;
-			border-radius:4px;
-			border:1px solid #AAAAAA;
-			}
-			.input_line {
-				display: inline-block;
-			}
-        </style>
-        </head>
+		<link rel="stylesheet" href="{% static 'get_data.css' %}">
+    </head>
     <body>
-        <div class="banner">
-            <p class="title">OSF Machine Learning Project</p>
-			<h2>Enter Patient Data</h2>
-        </div>
+
+		<div class="page">
+			<div class="landing">
+        		<div class="banner">
+					<h1>OSF Machine Learning Project</h1>
+					<h2>Enter Patient Data</h2>
+        		</div>
         
-		<form action = "" method = "post">
-		        <div class="data_display">
-    {% csrf_token %}
-    {% for field in form %}
-	<div class="input_line">
-	<b>{{field.label_tag}}</b>  {{field}}
-	</div>
-	{% endfor %}
-	         </div>
-			 <div class="submitButton">
-    <input type="submit" value=Submit>
-	</div>
-	</form>
+				<form action = "" method = "post">
+				
+		    		<div class="data_display">
+    					{% csrf_token %}
+    					{% for field in form %}
+							<div class="input_line">
+								{{field.label_tag}}
+								{{field}}
+							</div>
+						{% endfor %}
+	        		</div>
+
+					<div class="submitButton">
+    					<input type="submit" value=Submit>
+					</div>
+				</form>
     <!--{% for head in field_names|slice:"1:"%}
        <label>{{ head }} <input type="text" required minlength="1" maxlength="8" size="8"></label>
     {% endfor %} -->
-	
+			</div>
+		</div>
     </body>
 </html>
