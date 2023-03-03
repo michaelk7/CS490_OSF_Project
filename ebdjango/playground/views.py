@@ -1,6 +1,8 @@
 from .forms import DkaForm
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
+from .models import DkaData
 
 def calculate():
     x = 1
@@ -18,4 +20,13 @@ def get_data(request):
     return render(request, 'get_data.html', context)
 
 def input(request):
-    return render(request, 'input.html')
+    template = loader.get_template('input.html')
+    return HttpResponse(template.render())
+
+def results(request):
+    patients = DkaData.objects.all().values()
+    template = loader.get_template('results.html')
+    context = {
+    'patients': patients,
+    }
+    return HttpResponse(template.render(context, request))

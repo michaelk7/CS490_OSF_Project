@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Results</h1>
+  
+<ul>
+  {% for x in patients %}
+    <li>{{ x.id }} {{ x.age }}</li>
+  {% endfor %}
+</ul>
+
+</body>
+</html>
