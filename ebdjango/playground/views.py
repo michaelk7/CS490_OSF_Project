@@ -16,3 +16,6 @@ def get_data(request):
     context ={}
     context['form']= DkaForm()
     return render(request, 'get_data.html', context)
+
+def input(request):
+    return render(request, 'input.html')

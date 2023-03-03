@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-g(1(%_e7#onl#&)oy8j2%30b!f)clg4=3zfjp_#ak4q-43i-9r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-env.eba-d6fasca2.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['django-env.eba-d6fasca2.us-west-2.elasticbeanstalk.com', '127.0.0.1']
 
 
 # Application definition
@@ -50,11 +50,11 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-# INTERNAL_IPS = [
-#     # ...
-#     "127.0.0.1",
-#     # ...
-# ]
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
 
 ROOT_URLCONF = "ebdjango.urls"
 
