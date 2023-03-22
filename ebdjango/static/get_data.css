@@ -12,8 +12,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
-
 }
 
 h1,h2{
@@ -43,26 +41,28 @@ h1,h2{
     width: 350px;
     margin-left: 25px;
     color: white;
-    display: inline-block;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	 text-align: center;
+	display: inline-block;
 }
 
 .submitButton {
-    
-    /* border-color: #c05450; */
-    margin-left: 25px;
-    margin-top: 25px;
+	margin-left: 25px;
+	margin-top: 25px;
+	margin-bottom: 15px;
 }
-
 .input_line{
     width: 150px;
     margin: 15px;
     color: white;
-    
-    
 }
-
-
+button {
+	text-align: center; 
+	padding: 5px 10px;
+	margin: 5px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
 
 
 /* old css 

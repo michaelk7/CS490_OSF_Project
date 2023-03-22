@@ -1,5 +1,7 @@
 from .forms import DkaForm
+from .forms import SavedForm
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import DkaData
@@ -14,9 +16,14 @@ def say_hello(request):
     return render(request, 'hello.html', {'name': 'Mosh'})
     
 def get_data(request):
-    #field_names = [f.name for f in DkaData._meta.get_fields()]
-    context ={}
-    context['form']= DkaForm()
+    if request.method == "POST":
+        form = SavedForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(results)
+    else:
+        form = DkaForm()
+    context= {'form': form }
     return render(request, 'get_data.html', context)
 
 def input(request):
