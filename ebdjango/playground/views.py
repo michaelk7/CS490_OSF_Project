@@ -6,6 +6,9 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import DkaData
 
+from joblib import load
+model = load('./../savedModels/models.joblib')
+
 def calculate():
     x = 1
     y = 2
@@ -37,3 +40,9 @@ def results(request):
     'patients': patients,
     }
     return HttpResponse(template.render(context, request))
+
+def predictions(request):
+    if request.method == "POST":
+        y_pred = model.predict(DkaData.objects.all().values())
+        print(y_pred)
+        return render(request, 'results.html')
