@@ -1,4 +1,8 @@
-/* old css */
+/*
+INCORRECT file
+
+
+old css 
 .banner {
     margin: auto;
     width: fit-content;
@@ -26,7 +30,7 @@ b {
 }
 
 .data_display {
-    /* text-align: center; */
+     text-align: center; 
     width: 350px;
     margin-left: 25px;
     color: white;
@@ -44,7 +48,7 @@ select {
     display: inline-block;
 }
 
-/* new css  */
+ new css  
 .page {
 
     width: 100%;
@@ -65,3 +69,5 @@ body {
     background-color: lightblue;
     font-family: verdana;
   }
+
+*/

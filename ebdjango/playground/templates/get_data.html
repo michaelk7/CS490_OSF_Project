@@ -14,47 +14,48 @@
 					<h2>Enter Patient Data</h2>
         		</div>
         
-	<form method = "POST" action="" id="savedform">
-	<div class="data_display">
-		{% csrf_token %}
-		{% for field in form %}
-		<div class="input_line">
-		<b>{{field.label_tag}}</b>  {{field}}
-		{% if field.errors %}
-            <span>{{ field.errors|striptags }}</span>
-        {% endif %}
-		</div>
-		{% endfor %}
-	</div>
-	</form>
-	<div class="submitButton">
-	<button onclick="randomize_data()">Randomize</button>
-	 <button onclick="clear_data()">Reset</button>
-	 <button type="submit" form="savedform">Submit</button>
-	 </div>
+				<form method = "POST" action="" id="savedform">
+					<div class="data_display">
+							{% csrf_token %}
+							{% for field in form %}
+						<div class="input_line">
+							<b>{{field.label_tag}}</b>  {{field}}
+							{% if field.errors %}
+            				<span>{{ field.errors|striptags }}</span>
+        					{% endif %}
+						</div>
+							{% endfor %}
+					</div>
+				</form>
+				<div class="submitButton">
+					<button onclick="randomize_data()">Randomize</button>
+	 				<button onclick="clear_data()">Reset</button>
+	 				<button type="submit" form="savedform">Submit</button>
+	 			</div>
+
 	<script type="text/javascript">
-	function randomize_data(){
-		{% for field in form %}
-		var temp = "{{ field.id_for_label }}"
-		if ("{{ field.field.widget.input_type }}" == "number") {
-			document.getElementById(temp).value = Math.floor(Math.random() * 20) + 1;
+		function randomize_data(){
+			{% for field in form %}
+			var temp = "{{ field.id_for_label }}"
+			if ("{{ field.field.widget.input_type }}" == "number") {
+				document.getElementById(temp).value = Math.floor(Math.random() * 20) + 1;
+			}
+			else {
+				document.getElementById(temp).value = Math.round(Math.random());
+			}
+			{% endfor %}
 		}
-		else {
-			document.getElementById(temp).value = Math.round(Math.random());
+		function clear_data() {
+			{% for field in form %}
+			var temp = "{{ field.id_for_label }}"
+			if ("{{ field.field.widget.input_type }}" == "number") {
+				document.getElementById(temp).value = '';
+			}
+			else {
+				document.getElementById(temp).value = 0;
+			}
+			{% endfor %}
 		}
-		{% endfor %}
-	}
-	function clear_data() {
-		{% for field in form %}
-		var temp = "{{ field.id_for_label }}"
-		if ("{{ field.field.widget.input_type }}" == "number") {
-			document.getElementById(temp).value = '';
-		}
-		else {
-			document.getElementById(temp).value = 0;
-		}
-		{% endfor %}
-	}
 	</script>
 			</div>
 		</div>

@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
+<head>
+  {% load static %}  
+  <link rel="stylesheet" href="{% static '/results.css' %}">
+</head>
 <body>
 
-<h1>Results</h1>
-  
-<ul>
-  {% for x in patients %}
-    <li>{{ x.id }} {{ x.age }}</li>
-  {% endfor %}
-</ul>
+<div class="page">
+  <div class="landing">
+    <div class="banner">
+      <h1>Results</h1>
+      <section>
+        <ul>
+          {% for x in patients %}
+            <li>{{ x.id }} {{ x.age }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
