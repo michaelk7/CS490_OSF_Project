@@ -9,15 +9,6 @@ from .models import DkaData
 from joblib import load
 model = load('./../savedModels/models.joblib')
 
-def calculate():
-    x = 1
-    y = 2
-    return x
-
-def say_hello(request):
-    x = calculate()
-    return render(request, 'hello.html', {'name': 'Mosh'})
-    
 def get_data(request):
     if request.method == "POST":
         form = SavedForm(request.POST)
@@ -34,15 +25,9 @@ def input(request):
     return HttpResponse(template.render())
 
 def results(request):
-    patients = DkaData.objects.all().values()
+    queryset = DkaData.objects.values_list().first()
+        
+    y_pred = model.predict([queryset])
+    context = {'result':y_pred}
     template = loader.get_template('results.html')
-    context = {
-    'patients': patients,
-    }
-    return HttpResponse(template.render(context, request))
-
-def predictions(request):
-    if request.method == "POST":
-        y_pred = model.predict(DkaData.objects.all().values())
-        print(y_pred)
-        return render(request, 'results.html')
+    return render(request, 'results.html', context)

@@ -56,7 +56,7 @@ INTERNAL_IPS = [
     # ...
 ]
 
-ROOT_URLCONF = "ebdjango.urls"
+ROOT_URLCONF = "playground.urls"
 
 TEMPLATES = [
     {
